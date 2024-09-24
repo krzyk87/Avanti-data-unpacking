@@ -1,15 +1,8 @@
-import glob
-import os
 from read_scan_type import read_scan
-
-
-def list_dir(dirpath):
-    for f in sorted(glob.glob(os.path.join(dirpath, "*/*.oct"))):
-        yield f
-
+from utils import *
 
 data_dir = '../DATA/AVANTI_DOMINIKA'
-image_list = list(list_dir(data_dir))
+image_list = list(list_scans_oct(data_dir))
 
 if __name__ == '__main__':
     for file_path in image_list:
